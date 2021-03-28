@@ -19,4 +19,6 @@ services:
       - .:/src:z
     command: bash -c "python manage.py runserver 0.0.0.0:8000"
     ports:
-      - "80:8000"
+      - "888:8000"
+    depends_on:
+      - db
