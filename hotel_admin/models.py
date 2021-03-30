@@ -44,3 +44,9 @@ class TableBooking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     destination_time = models.DateTimeField()
+
+
+class News(models.Model):
+    title = models.CharField(max_length=255)
+    text = models.TextField()
+    image = models.ImageField()

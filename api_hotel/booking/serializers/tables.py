@@ -10,8 +10,8 @@ User = get_user_model()
 
 
 class BookTableSerializer(serializers.ModelSerializer):
-    user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
     table = serializers.PrimaryKeyRelatedField(queryset=Table.objects.all())
+
 
     def validate(self, data):
         destination_time = data["destination_time"]
@@ -22,9 +22,13 @@ class BookTableSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"destination_time": "Already booked."})
         return data
 
+    def create(self, validated_data):
+        validated_data["user"] = self.context["request"].user
+        return super().create(validated_data)
+
     class Meta:
         model = TableBooking
-        fields = ("user", "table", "destination_time")
+        fields = ("table", "destination_time")
 
 
 class TableSerializer(serializers.ModelSerializer):
