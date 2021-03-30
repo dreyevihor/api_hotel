@@ -28,7 +28,7 @@ class BookTableSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TableBooking
-        fields = ("table", "destination_time")
+        fields = ("id", "table", "destination_time")
 
 
 class TableSerializer(serializers.ModelSerializer):

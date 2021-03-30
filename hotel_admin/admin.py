@@ -18,4 +18,5 @@ admin.site.register(Room, admin.ModelAdmin)
 admin.site.register(Dish, admin.ModelAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(RoomService, admin.ModelAdmin)
+admin.site.register(News, admin.ModelAdmin)
 

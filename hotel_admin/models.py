@@ -19,6 +19,9 @@ class Dish(models.Model):
     weight = models.IntegerField()
     description = models.CharField(max_length=1255)
 
+    def __str__(self):
+        return self.title
+
 
 class DishOrder(models.Model):
     dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
