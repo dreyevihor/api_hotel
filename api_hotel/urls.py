@@ -6,6 +6,7 @@ from api_hotel.booking.views.tables import BookTableView, TableView
 from api_hotel.booking.views.dishes import DishView, OrderView
 from api_hotel.booking.views.services import RoomServiceView
 from api_hotel.booking.views.news import NewsView
+from api_hotel.booking.views.rooms import RoomsView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -16,6 +17,7 @@ router.register(r"api/tables", TableView)
 router.register(r"api/orders", OrderView)
 router.register(r"api/dishes", DishView)
 router.register(r"api/news", NewsView)
+router.register(r"api/rooms", RoomsView)
 router.register(r"api/rooms/service", RoomServiceView)
 
 
