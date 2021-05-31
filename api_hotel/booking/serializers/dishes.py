@@ -14,7 +14,7 @@ class DishSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Dish
-        fields = ("id", "title", "weight", "description", "image")
+        fields = ("id", "title", "weight", "description", "image", "price")
 
 
 class DishOrderSerializer(serializers.ModelSerializer):

@@ -10,7 +10,4 @@ class CreateUserView(CreateModelMixin, GenericViewSet):
 
     model = get_user_model()
     queryset = get_user_model().objects.all()
-    permission_classes = [
-        permissions.IsAuthenticated
-    ]
     serializer_class = UserSerializer

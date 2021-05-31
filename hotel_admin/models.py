@@ -18,6 +18,7 @@ class Dish(models.Model):
     image = models.ImageField()
     weight = models.IntegerField()
     description = models.CharField(max_length=1255)
+    price = models.FloatField(default='0')
 
     def __str__(self):
         return self.title
